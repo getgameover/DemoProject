@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+.datatables_tools{
+	width:50%;
+	float: left;
+}
+.dataTables_length{
+	margin-left: 10px;
+}
+.dataTables_info{
+	margin-left: 10px;
+}
+.dataTables_filter{
+	margin-right: 10px;
+}
+.cell_bt_tools button{
+	margin-right: 5px;
+}
+.lu_format{
+	margin-right: 5px;
+}
+.lu_format_right{
+	cursor: pointer;
+}

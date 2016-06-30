@@ -1,0 +1,22 @@
+<div class="pageContent">
+    <form id="updatefilemsg_form" method="post" action="javascript:;" class="pageForm">
+        <input type="hidden" name="id">
+        <div class="pageFormContent" layoutH="58">
+            <div class="unit">
+                <label>文件名称：</label>
+                <input type="text" name="name" placeholder="文件名" size="30" data-min="2" data-max="60" required />
+            </div>
+            <div class="unit">
+                <label>文件状态：</label>
+                <select name="status"><option value="1">有效</option><option value="0">无效</option></select>
+            </div>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li><div class="buttonActive"><div class="buttonContent"><button type="submit">提交修改</button></div></div></li>
+                <li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+            </ul>
+        </div>
+    </form>
+    
+</div>

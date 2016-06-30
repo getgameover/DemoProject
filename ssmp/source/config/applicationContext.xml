@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns="http://www.springframework.org/schema/beans"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.2.xsd 
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx-4.2.xsd 
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-4.2.xsd ">
+	<context:property-placeholder location="classpath:config/jdbc.properties" file-encoding="ISO-8859-1" />
+	<bean id="resourceRoot" class="com.luqili.version.ResourceRoot" p:version="${myapp_version}" init-method="init"></bean>
+	<context:component-scan base-package="com.luqili"></context:component-scan>
+
+	 <!-- MyBatis整合 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="mapperLocations" value="classpath*:com/luqili/db/beans/mappers/**/*.xml" />
+        <property name="configLocation" value="classpath:config/mybatis.xml" />
+    </bean>
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close" 
+	   p:driverClass="${myapp_db_driverClass}" p:jdbcUrl="${myapp_db_jdbcUrl}"
+		p:user="${myapp_db_user}" p:password="${myapp_db_password}">
+		<property name="minPoolSize" value="5"></property>
+		<property name="maxPoolSize" value="30"></property>
+		<property name="initialPoolSize" value="5"></property>
+		<property name="maxIdleTime" value="60"></property>
+		<property name="acquireIncrement" value="5"></property>
+		<property name="maxStatements" value="0"></property>
+		<property name="idleConnectionTestPeriod" value="60"></property>
+		<property name="acquireRetryAttempts" value="30"></property>
+		<property name="testConnectionOnCheckout" value="false"></property>
+		<property name="breakAfterAcquireFailure" value="true"></property>
+	</bean>
+	
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.luqili.db.dao" />
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+    </bean>
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager" p:dataSource-ref="dataSource"  ></bean>
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	<!-- 
+	<bean id="javaMailSenderImpl" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="${email_host}"></property>
+		<property name="username" value="${email_username}"></property>
+		<property name="password" value="${email_password}"></property>
+		<property name="defaultEncoding" value="${email_defaultEncoding}"></property>
+	</bean>
+    -->
+</beans>

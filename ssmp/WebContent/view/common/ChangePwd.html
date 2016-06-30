@@ -1,0 +1,31 @@
+<div class="pageContent">
+	<form id="changepwd_form" method="post" action="javascript:;" class="pageForm">
+		<div class="pageFormContent" layoutH="58">
+			<div class="unit">
+				<label>旧密码：</label>
+				<input type="password" name="oldPassword" placeholder="账户原登陆密码" size="30" data-min="1" data-max="20" required />
+			</div>
+			<div class="unit">
+				<label>新密码：</label>
+				<input type="password" name="newPassword" placeholder="更改为的新密码" size="30" data-min="6" data-max="20" required />
+			</div>
+			<div class="unit">
+				<label>重复新密码：</label>
+				<input type="password" name="rnewPassword" placeholder="重复输入新密码" size="30" data-min="6" data-max="20" required />
+			</div>
+			<div class="unit">
+                <label>验证码:</label>
+                <input type="text" class="img-code" name="imgcode" size="10" required="required" placeholder="验证码"/>
+                <img class="img-code" id="login_img_code" alt="点击刷新" src="">
+            </div>
+			
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">提交</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+	
+</div>

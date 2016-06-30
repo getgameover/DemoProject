@@ -1,0 +1,50 @@
+<div class="pageContent">
+	<form id="upusermsg_form" method="post" action="javascript:;" class="pageForm">
+		<div class="pageFormContent" layoutH="58">
+			<div class="unit">
+				<label>用户头像：</label>
+				<div>
+				    <img id="headImgUrl" alt="用户头像" src="" width="100" height="100">
+				    <input type="hidden" name="headImgId">
+				    <input id="selectHeadImg" type="button" value="选择头像">
+				</div>
+			</div>
+			<div class="unit">
+				<label>用户姓名：</label>
+				<input type="text" name="name" placeholder="姓名" size="30" data-min="1" data-max="20" required />
+			</div>
+			<div class="unit">
+				<label>性别：</label>
+				<select name="sex"><option value="0">保密</option><option value="1">男</option><option value="2">女</option></select>
+			</div>
+			<div class="unit">
+				<label>联系QQ：</label>
+				<input type="text" name="qq" placeholder="联系QQ" size="30" pattern="^\d{5,12}$" />
+			</div>
+			<div class="unit">
+				<label>联系电话：</label>
+				<input type="text" name="phone" placeholder="联系电话" size="30" pattern="^[\d|-]{5,15}$" />
+			</div>
+			<div class="unit">
+				<label>部门固话：</label>
+				<input type="text" name="tel" placeholder="部门固话" size="30" pattern="^[\d|-]{5,15}$" />
+			</div>
+			<div class="unit">
+				<label>证件号：</label>
+				<input type="text" name="idcard" placeholder="证件号码" size="30" pattern="^[\d]{5,18}$" />
+			</div>
+			<div class="unit">
+				<label>联系地址：</label>
+				<input type="text" name="address" placeholder="联系地址" size="30" data-max="120" />
+			</div>
+			
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">提交</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+	
+</div>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+   <classPathEntry location="D:/.m2/repository/org/postgresql/postgresql/9.4-1205-jdbc42/postgresql-9.4-1205-jdbc42.jar"/>
+   <context id="base" targetRuntime="MyBatis3" defaultModelType="flat">
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <commentGenerator>
+            <property name="suppressAllComments" value="false" />
+            <property name="suppressDate" value="true" />
+        </commentGenerator>
+
+        <jdbcConnection driverClass="org.postgresql.Driver"
+            connectionURL="jdbc:postgresql://localhost:5432/ssmp"
+            userId="postgres"
+            password="luqili">
+        </jdbcConnection>
+
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="true" />
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.luqili.db.beans" targetProject="ssmp">
+            <property name="enableSubPackages" value="true" /> 
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="com.luqili.db.beans.mappers"  targetProject="ssmp">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.luqili.db.dao"  targetProject="ssmp">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+        <table schema="base" tableName="lu_user" domainObjectName="User"
+            enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+            enableSelectByExample="false" selectByExampleQueryId="false" >
+        </table>
+        <table schema="base" tableName="lu_user_detail" domainObjectName="UserDetail"
+            enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+            enableSelectByExample="false" selectByExampleQueryId="false" >
+        </table>
+        <table schema="base" tableName="lu_img" domainObjectName="Img"
+            enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+            enableSelectByExample="false" selectByExampleQueryId="false" >
+        </table>
+        
+        
+    </context>
+  
+  
+</generatorConfiguration>
