@@ -42,7 +42,12 @@
     </bean>
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager" p:dataSource-ref="dataSource"  ></bean>
 	<tx:annotation-driven transaction-manager="transactionManager" />
-	<!-- 
+	
+	<!--
+	
+	
+	<bean class=" org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.AnnotationAwareAspectJAutoProxyCreator"></bean>
+	 
 	<bean id="javaMailSenderImpl" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="host" value="${email_host}"></property>
 		<property name="username" value="${email_username}"></property>

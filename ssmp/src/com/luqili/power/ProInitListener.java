@@ -9,7 +9,7 @@ import org.apache.log4j.Logger;
 import com.luqili.tool.ConstantFile;
 
 public class ProInitListener implements ServletContextListener{
-	private Logger log = Logger.getLogger(this.getClass());
+	private Logger log = Logger.getLogger(ProInitListener.class);
 	
 	@Override
 	public void contextDestroyed(ServletContextEvent arg0) {
@@ -17,6 +17,7 @@ public class ProInitListener implements ServletContextListener{
 	}
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
+		
 		if(StringUtils.isBlank(ConstantFile.RootPath)){
 			ConstantFile.RootPath=sce.getServletContext().getRealPath("/");
 		}
