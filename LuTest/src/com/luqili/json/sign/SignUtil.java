@@ -14,9 +14,10 @@ public class SignUtil {
 	public static String objToJson(Object obj){
 		StringWriter sw = new StringWriter();
 		ObjectMapper mapper = new ObjectMapper();
-		mapper.setSerializationInclusion(Include.NON_EMPTY);
+		mapper.setSerializationInclusion(Include.NON_NULL);
+		mapper.configure(SerializationFeature.WRITE_NULL_MAP_VALUES,false);
 		mapper.configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS,false);  
-		//mapper.configure(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY,true);//属性排序  
+		mapper.configure(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY,true);//属性排序  
 		
 		if (null != obj) {
 		    try {

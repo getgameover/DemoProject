@@ -1,5 +1,7 @@
 package com.luqili.json.sign;
 
+import org.apache.commons.lang.StringUtils;
+
 public class TestMain {
 	
 	public static void main(String[] args) {
@@ -31,6 +33,9 @@ public class TestMain {
 		res.setResult(result);
 		System.out.println("RESPONSE:"+SignUtil.objToJson(res));
 		System.out.println("RESPONSE:"+SignUtil.signResponse(res, pwd));
+		
+		StringUtils.stripStart("", "");
+		
 
 	}
 
