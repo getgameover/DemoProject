@@ -4,12 +4,13 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import com.luqili.tool.ConstantFile;
 
 public class ProInitListener implements ServletContextListener{
-	private Logger log = Logger.getLogger(ProInitListener.class);
+	private Logger log = LogManager.getLogger(ProInitListener.class);
 	
 	@Override
 	public void contextDestroyed(ServletContextEvent arg0) {

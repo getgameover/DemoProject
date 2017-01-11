@@ -6,7 +6,8 @@ import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import com.luqili.db.dao.BaseDAO;
 import com.luqili.tool.LuException;
@@ -18,7 +19,7 @@ import com.luqili.tool.ParseJsonUtil;
  *
  */
 public class Page {
-	private static Logger log = Logger.getLogger(Page.class);
+	private static Logger log = LogManager.getLogger(Page.class);
 	private Integer draw;//请求次数
     private int start = 0;//起始位置
     private int length = 15;//每页的条数

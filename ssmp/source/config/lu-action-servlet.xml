@@ -59,14 +59,13 @@
 		value="${email_username}"></property> <property name="password" value="${email_password}"></property> 
 		<property name="defaultEncoding" value="${email_defaultEncoding}"></property> 
 		</bean> -->
-	<!-- 调度工厂 
-	<bean id="scheduledJobFactory"
-		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+	<!-- 调度工厂--> 
+	<bean id="scheduledJobFactory" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
 		<property name="applicationContextSchedulerContextKey" value="applicationContextKey" />
-		<property name="configLocation" value="WEB-INF/conf/quartz.properties" />
-		<property name="dataSource" value="dataSource"></property>
+		<!--   <property name="configLocation" value="WEB-INF/conf/quartz.properties" />
+		<property name="dataSource" value="dataSource"></property>-->
 	</bean>
-	-->
+	
 
 	<aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
 	<bean class="com.luqili.power.ActionLogUtilAspect"></bean>
